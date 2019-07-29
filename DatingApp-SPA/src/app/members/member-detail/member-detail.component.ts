@@ -11,6 +11,7 @@ import { NgxGalleryOptions, NgxGalleryImage, NgxGalleryAnimation } from 'ngx-gal
   styleUrls: ['./member-detail.component.css']
 })
 export class MemberDetailComponent implements OnInit {
+
 user: User;
 
 galleryOptions: NgxGalleryOptions[];

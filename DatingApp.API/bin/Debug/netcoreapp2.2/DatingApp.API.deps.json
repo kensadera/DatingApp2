@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.2",
-    "signature": "8ad0b7030a9aa465efb815e5526311ad71d74220"
+    "signature": "dbaaf79a86b940a6aa3f0de546a99d1ce58387d9"
   },
   "compilationOptions": {
     "defines": [
@@ -27,7 +27,8 @@
           "AutoMapper.Extensions.Microsoft.DependencyInjection": "6.1.1",
           "Microsoft.AspNetCore.App": "2.2.0",
           "Microsoft.EntityFrameworkCore.Sqlite": "2.2.1",
-          "Microsoft.NETCore.App": "2.2.0"
+          "Microsoft.NETCore.App": "2.2.0",
+          "tslint": "5.17.0"
         },
         "runtime": {
           "DatingApp.API.dll": {}
@@ -318,6 +319,7 @@
           "System.Runtime": "4.3.0"
         }
       },
+      "tslint/5.17.0": {},
       "Microsoft.AspNet.WebApi.Client/5.2.6": {
         "dependencies": {
           "Newtonsoft.Json": "11.0.2",
@@ -3575,6 +3577,13 @@
       "sha512": "sha512-Yn/WfYe9RoRfmSLvUt2JerP0BTGGykCZkQPgojaxgzF2N0oPo+/AhB8TXOpdCcNlrG3VRtsamtK2uzsp3cqRVw==",
       "path": "system.linq.queryable/4.0.1",
       "hashPath": "system.linq.queryable.4.0.1.nupkg.sha512"
+    },
+    "tslint/5.17.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-hJn5l1RWdoGEXAxjigDwLcpMUT0qR+yfBiUBa0laTX5XxwHmz6ivVxMBOlAea51w8qnyCjywNs7uI+h6Kb4mew==",
+      "path": "tslint/5.17.0",
+      "hashPath": "tslint.5.17.0.nupkg.sha512"
     },
     "Microsoft.AspNet.WebApi.Client/5.2.6": {
       "type": "package",
