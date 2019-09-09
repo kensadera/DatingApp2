@@ -28,29 +28,29 @@ namespace DatingApp.API.Controllers {
         [HttpPost ("register")]
 
         public async Task<IActionResult> Register (UserForRegisterDto userForRegisterDto) {
-            userForRegisterDto.Username = userForRegisterDto.Username.ToLower ();
+            userForRegisterDto.Username = userForRegisterDto.Username.ToLower();
 
             if (await _repo.UserExists (userForRegisterDto.Username))
                 return BadRequest ("User already exists");
 
-            var userToCreate = new User {
-                Username = userForRegisterDto.Username
-            };
+            var userToCreate = _mapper.Map<User>(userForRegisterDto);
 
-            var userCreated = await _repo.Register (userToCreate, userForRegisterDto.Password);
-            return StatusCode (201);
+            var createdUser = await _repo.Register(userToCreate, userForRegisterDto.Password);
+            
+            var userToReturn = _mapper.Map<UserForDetailedDto>(userToCreate);
 
+            return CreatedAtRoute("GetUSer", new {Controller="Users", id = createdUser.Id});
         }
 
         [HttpPost ("Login")]
         public async Task<IActionResult> Login (UserForLoginDto UserForLoginDto) {
-            var userFromRepo = await _repo.Login (UserForLoginDto.Username.ToLower (), UserForLoginDto.Password);
+            var userFromRepo = await _repo.Login (UserForLoginDto.Username.ToLower(), UserForLoginDto.Password);
 
             if (userFromRepo == null)
                 return Unauthorized ();
 
             var claims = new [] {
-                new Claim (ClaimTypes.NameIdentifier, userFromRepo.Id.ToString ()),
+                new Claim (ClaimTypes.NameIdentifier, userFromRepo.Id.ToString()),
                 new Claim (ClaimTypes.Name, userFromRepo.Username)
             };
 
