@@ -11,6 +11,14 @@
            "processId": "${command:pickProcess}"
        },
 
+       
+       {
+           "name": ".NET Core Attach",
+           "type": "coreclr",
+           "request": "attach",
+           "processId": "${command:pickProcess}"
+       },
+
         {
             "name": ".NET Core Launch (web)",
             "type": "coreclr",
@@ -31,11 +39,6 @@
                 "/Views": "${workspaceFolder}/Views"
             }
         },
-        {
-            "name": ".NET Core Attach",
-            "type": "coreclr",
-            "request": "attach",
-            "processId": "${command:pickProcess}"
-        }
+     
     ]
 }
