@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-// tslint:disable-next-line: max-line-length
 import { HttpInterceptor, HttpRequest, HttpHandler, HttpEvent, HttpResponse, HTTP_INTERCEPTORS, HttpErrorResponse } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
